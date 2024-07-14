@@ -6,9 +6,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
-})->middleware('auth:api');
+})->middleware(['auth:api', 'scopes:get-email']);
 
-Route::middleware('auth:api')->post('/posts/new', function(Request $request){
+Route::middleware(['auth:api', 'scopes:create-posts'])->post('/posts/new', function(Request $request){
     return $request->user()->posts()->create($request->only(['title', 'content']));
 });
 

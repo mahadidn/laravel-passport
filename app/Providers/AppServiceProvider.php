@@ -21,5 +21,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Passport::loadKeysFrom(__DIR__ . '/../secrets/oauth');
+
+        Passport::tokensCan([
+            'get-email' => 'Retrieve the email associated with your account',
+            'create-posts' => 'Create posts on behalf of your user',
+        ]);
+
     }
 }
