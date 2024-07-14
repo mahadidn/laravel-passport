@@ -16,13 +16,9 @@
                             <li>
                                 <div class="py-3 text-gray-900 mt-5">
                                     <h3 class="text-lg text-gray-500">{{ $client->name }}</h3>
-                                    <p>{{ $client->redirect }}</p>
-                                    <p>{{ $client->secret }}</p>
-                                    {{-- 
-                                    
-                                        Redirect is for 
-                                    
-                                    --}}
+                                    <p><b>Client ID:</b> {{ $client->id }}</p>
+                                    <p><b>Client Redirect: </b>{{ $client->redirect }}</p>
+                                    <p><b>Client Secret: </b>{{ $client->secret }}</p>
                                 </div>
                             </li>
                         @endforeach
